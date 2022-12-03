@@ -168,13 +168,14 @@ let wrongattemp = 0;
 let thedraw = document.querySelector(".all");
 let guesspan = document.querySelectorAll(".guesscont span");
 document.addEventListener("click", (e) => {
+  let choosenword = Array.from(finalvalue.toLowerCase());
+  let clickletter = e.target.innerHTML.toLowerCase();
   let status = false;
   if (e.target.className == "letter-holder") {
     e.target.classList.add("clicked");
 
     let counter = 0;
-    let choosenword = Array.from(finalvalue.toLowerCase());
-    let clickletter = e.target.innerHTML.toLowerCase();
+
     choosenword.forEach((llett, woindex) => {
       if (llett == clickletter) {
         press.play();
@@ -199,6 +200,7 @@ document.addEventListener("click", (e) => {
     if (status != true) {
       wrongattemp++;
       thedraw.classList.add(`wrong-${wrongattemp}`);
+      sad.play();
 
       if (wrongattemp == 11) {
         //  endGame();
@@ -250,7 +252,18 @@ if (valof == true) {
         Swal.fire("... Zindabaaad");
       } else if (finalvalue == "syria") {
         Swal.fire("");
+      } else {
+        Swal.fire("no hint for this one");
       }
     };
   }, 3000);
 }
+let allsound = document.querySelector(".allsound");
+let stop_sound = document.querySelector(".stop_sound");
+stop_sound.onclick = () => {
+  if (!allsound.paused) {
+    allsound.pause();
+  } else {
+    allsound.play();
+  }
+};

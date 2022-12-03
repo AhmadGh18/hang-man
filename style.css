@@ -325,6 +325,29 @@ body {
     pointer-events: none;
 }
 
+.soun {
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stop_sound {
+
+    padding: 13px;
+    background-color: cornflowerblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 15.0px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.stop_sound :hover {
+    transform: scale(1.1);
+}
+
 .pop {
     color: red;
 }

@@ -49,7 +49,16 @@
     <div class="letters"></div>
     <div class="guesscont"></div>
     <div class="seehelp"></div>
-
+    <div class="soun">
+      <button class="stop_sound">stop sound</button>
+    </div>
+    <audio
+      class="allsound"
+      src="mixkit-space-soundscape-653.mp3"
+      autoplay
+      loop
+      onload="play()"
+    ></audio>
     <audio controls="controls" class="audio">
       <source src="mixkit-cartoon-panic-squeak-1010.wav" />
     </audio>
@@ -62,7 +71,7 @@
     <audio controls="contr" class="sad">
       <source src="mixkit-failure-arcade-alert-notification-240.wav" />
     </audio>
-    <audio src="mixkit-space-soundscape-653.mp3" autoplay loop></audio>
+
     <script src="main.js"></script>
   </body>
 </html>
