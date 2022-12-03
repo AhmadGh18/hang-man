@@ -195,7 +195,7 @@ document.addEventListener("click", (e) => {
         });
       }
     });
-    console.log(cor);
+
     let trueword = "";
     if (status != true) {
       wrongattemp++;
@@ -258,12 +258,16 @@ if (valof == true) {
     };
   }, 3000);
 }
+
 let allsound = document.querySelector(".allsound");
+
 let stop_sound = document.querySelector(".stop_sound");
 stop_sound.onclick = () => {
   if (!allsound.paused) {
+    stop_sound.innerHTML = "play sound";
     allsound.pause();
   } else {
+    stop_sound.innerHTML = "stop sound";
     allsound.play();
   }
 };
